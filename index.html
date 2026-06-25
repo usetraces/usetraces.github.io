@@ -6,7 +6,7 @@
 <title>traces — supercharged ee tools</title>
 <meta name="description" content="supercharged ee tools. source parts in plain english, run semantic checks on schematics, fetch datasheets. inside kicad and your terminal. open source, runs on your machine.">
 <meta property="og:title" content="traces — supercharged ee tools">
-<meta property="og:description" content="ai for the eda. open source, local-first.">
+<meta property="og:description" content="open source, local-first.">
 <style>
   :root{ --ink:#000; --muted:#666; --rule:#ddd; --bg:#fff; }
   *{box-sizing:border-box}
@@ -43,9 +43,9 @@
   <h1>traces</h1>
   <p class="motto">supercharged ee tools</p>
 
-  <p>ai for the eda. source parts in plain english, catch schematic bugs erc
-  can't, and pull datasheets &mdash; inside kicad and your terminal. open source,
-  runs on your machine.</p>
+  <p>source parts in plain english, catch schematic bugs erc can't, and pull
+  datasheets &mdash; inside kicad and your terminal. open source, runs on your
+  machine.</p>
 
   <hr>
 
@@ -66,17 +66,15 @@
   <hr>
 
   <h2>quick start</h2>
-  <pre><span class="c"># clone and configure</span>
+  <pre><span class="c"># clone and install all three tools</span>
 git clone https://github.com/usetraces/traces.git
-cd traces &amp;&amp; cp .env.example .env   <span class="c"># add a key, or use ollama</span>
+cd traces &amp;&amp; ./install.sh   <span class="c"># creates .env; pulls a local model if no key</span>
 
-<span class="c"># run the local sourcing server</span>
-cd mcp &amp;&amp; ./install.sh &amp;&amp; uv run traces-serve
-
-<span class="c"># install the kicad plugin</span>
-cd ../kicad-extension &amp;&amp; ./install.sh</pre>
-  <p class="muted">full setup, the /src skill, and the local-model guide are in the
-  <a href="https://github.com/usetraces/traces">readme</a>.</p>
+<span class="c"># start the local server</span>
+cd mcp &amp;&amp; uv run traces-serve</pre>
+  <p class="muted">one command sets up the server, the kicad plugin, and the /src
+  skill. add keys to .env as needed &mdash; with none, sourcing runs fully local.
+  details in the <a href="https://github.com/usetraces/traces">readme</a>.</p>
 
   <footer>
     mit &middot; <a href="https://github.com/usetraces/traces">github.com/usetraces/traces</a>
