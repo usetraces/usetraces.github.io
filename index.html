@@ -1,3 +1,87 @@
-<html>
-	<p>hello world</p>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>traces — supercharged ee tools</title>
+<meta name="description" content="supercharged ee tools. source parts in plain english, run semantic checks on schematics, fetch datasheets. inside kicad and your terminal. open source, runs on your machine.">
+<meta property="og:title" content="traces — supercharged ee tools">
+<meta property="og:description" content="ai for the eda. open source, local-first.">
+<style>
+  :root{ --ink:#000; --muted:#666; --rule:#ddd; --bg:#fff; }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:15px/1.65 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:640px;margin:0 auto;padding:54px 22px 72px}
+  a{color:var(--ink)}
+  h1{font-size:30px;letter-spacing:-.5px;margin:0;font-weight:700}
+  .motto{margin:6px 0 0;font-size:15px}
+  p{margin:18px 0}
+  hr{border:0;border-top:1px solid var(--rule);margin:34px 0}
+  h2{font-size:15px;font-weight:700;margin:0 0 12px}
+  .muted{color:var(--muted)}
+  ul{margin:0;padding:0;list-style:none}
+  li{padding:11px 0;border-top:1px solid var(--rule)}
+  li:first-child{border-top:0}
+  li b{font-weight:700}
+  pre{
+    background:#fafafa;border:1px solid var(--rule);
+    padding:14px 16px;overflow-x:auto;font-size:13px;line-height:1.7;margin:0;
+  }
+  pre .c{color:var(--muted)}
+  footer{margin-top:40px;color:var(--muted);font-size:13px}
+  footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>traces</h1>
+  <p class="motto">supercharged ee tools</p>
+
+  <p>ai for the eda. source parts in plain english, catch schematic bugs erc
+  can't, and pull datasheets &mdash; inside kicad and your terminal. open source,
+  runs on your machine.</p>
+
+  <hr>
+
+  <h2>three tools</h2>
+  <ul>
+    <li><b>mcp</b> &mdash; <span class="muted">describe a part (&ldquo;100nF 0402 X7R&rdquo;, &ldquo;low-Rds N-MOSFET SOT-23&rdquo;, or an mpn) and get ranked, in-stock candidates across jlcpcb, digi-key, and mouser. install it into claude code, codex, or any mcp agent.</span></li>
+    <li><b>kicad extension</b> &mdash; <span class="muted">a kicad 10 plugin that sources parts into your schematic, reconciles metadata, pulls symbols/footprints from lcsc, and fetches datasheets.</span></li>
+    <li><b>semantic rule check (src)</b> &mdash; <span class="muted">erc checks your wiring. src checks the meaning: net-label typos, inconsistent buses, orphan nets, near-duplicate names. run /src from claude code or codex.</span></li>
+  </ul>
+
+  <hr>
+
+  <h2>local-first</h2>
+  <p class="muted">no accounts, no billing, no telemetry. point it at openrouter,
+  or run fully offline with a local model via ollama. live stock and pricing from
+  the suppliers &mdash; the model selects, it never invents. mit licensed.</p>
+
+  <hr>
+
+  <h2>quick start</h2>
+  <pre><span class="c"># clone and configure</span>
+git clone https://github.com/usetraces/traces.git
+cd traces &amp;&amp; cp .env.example .env   <span class="c"># add a key, or use ollama</span>
+
+<span class="c"># run the local sourcing server</span>
+cd mcp &amp;&amp; ./install.sh &amp;&amp; uv run traces-serve
+
+<span class="c"># install the kicad plugin</span>
+cd ../kicad-extension &amp;&amp; ./install.sh</pre>
+  <p class="muted">full setup, the /src skill, and the local-model guide are in the
+  <a href="https://github.com/usetraces/traces">readme</a>.</p>
+
+  <footer>
+    mit &middot; <a href="https://github.com/usetraces/traces">github.com/usetraces/traces</a>
+  </footer>
+
+</div>
+</body>
 </html>
